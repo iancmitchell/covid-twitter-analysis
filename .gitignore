@@ -1,2 +1,7 @@
 local/
 .vscode/
+__pycache__
+.env
+build
+credentials
+Covid_Twitter_ETL.egg-info
