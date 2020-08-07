@@ -5,3 +5,4 @@ __pycache__
 build
 credentials
 Covid_Twitter_ETL.egg-info
+test_files
