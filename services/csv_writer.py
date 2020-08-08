@@ -14,8 +14,8 @@ class CSVWriter(object):
 
     def export_list(self, location: str, data: List, columns: List):
         self._verify_location(location)
-        with open(location, "w", newline='') as csvfile:
-            writer = csv.writer(csvfile, delimiter=' ', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+        with open(location, "w", newline='\n') as csvfile:
+            writer = csv.writer(csvfile, delimiter=',', quoting=csv.QUOTE_MINIMAL)
             writer.writerow(columns)
             for line in data:
                 row = [line.get(column) for column in columns]
@@ -24,7 +24,7 @@ class CSVWriter(object):
     def import_csv(self, location: str) -> Dataframe:
         self._verify_location(location)
         with open(location, "r") as csvfile:
-            reader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+            reader = csv.reader(csvfile, delimiter=',')
             columns = []
             data = []
             read_columns = True
